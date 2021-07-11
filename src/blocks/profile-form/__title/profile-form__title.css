@@ -1,0 +1,15 @@
+.profile-form__title {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  width: 330px;
+  margin: 0 auto 54px 0;
+}
+
+@media (max-width: 320px) {
+  .profile-form__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}

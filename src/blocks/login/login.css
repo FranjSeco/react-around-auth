@@ -1,0 +1,13 @@
+@import url('./__title/login__title.css');
+@import url('./__form/__form.css');
+@import url('./__form-email/login__form-email.css');
+@import url('./__form-password/login__form-password.css');
+@import url('./__submit/login__submit.css');
+@import url('./__text/login__text.css');
+
+.login {
+    max-width: 358px;
+    min-height: 100vh;
+    margin: 20px auto 20px auto;
+    background-color: black;
+}

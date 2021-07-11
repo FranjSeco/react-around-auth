@@ -1,0 +1,33 @@
+@import url("./__title/delete-form__title.css");
+@import url("./__btn/delete-form__btn.css");
+@import url("./__form/delete-form__form.css");
+
+.delete-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  width: 430px;
+  height: 181px;
+  background-color: #fff;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+
+
+@media (max-width: 530px) {
+  .delete-form {
+    width: 300px;
+  }
+}
+
+@media (max-width: 320px) {
+  .delete-form {
+    width: 282px;
+  }
+}
