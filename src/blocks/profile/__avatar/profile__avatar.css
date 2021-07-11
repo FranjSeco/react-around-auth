@@ -4,7 +4,9 @@
   height: 120px;
   border-radius: 50%;
   position: relative;
-  z-index: 1000;
+  background: #fff;
+  background: none;
+  z-index: 1;
 }
 
 .profile__avatar:hover {

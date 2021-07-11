@@ -9,6 +9,7 @@
   width: 100%;
   opacity: 1;
   margin: 0 0 30px 0;
+  background-color: #fff;
 }
 
 .image-form__input:nth-child(3) {

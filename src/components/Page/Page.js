@@ -13,13 +13,13 @@ import '../../index.css';
 
 const Page = () => {
     
-    const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+    const [isLoggedIn, setIsLoggedIn] = React.useState(true);
 
     return (
         <div className='Page'>
             <Header />
             <Switch>
-
+                <ProtectedRoute component={App} exact path="/" loggedIn={isLoggedIn} />
                 <Route path="/signup">
                     <Register />
                 </Route>
@@ -29,10 +29,8 @@ const Page = () => {
                 </Route>
 
                 {isLoggedIn ? <Redirect to="/" /> : <Redirect to="/signin" />}
-
+                
             </Switch>
-            
-            <ProtectedRoute component={App} exact path="/" loggedIn={isLoggedIn} />
         </div>
     );
 }

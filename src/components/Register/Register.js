@@ -36,8 +36,6 @@ const Register = () => {
         if(localStorage.getItem('jwt')) {
             //Redirect
             history.push('/');
-        } else {
-            history.push('/signin');
         }
     }, [])
     return (
