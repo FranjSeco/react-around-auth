@@ -18,7 +18,7 @@ const Register = () => {
         e.preventDefault();
         
         if (userEmail && userPassword) {
-            auth.register(userPassword, userEmail)
+            auth.register(userEmail, userPassword)
                 .then(res => {
                     if (!res || res.statusCode === 400) {
                         throw new Error('Error!');
@@ -32,12 +32,12 @@ const Register = () => {
         }
     }
 
-    React.useEffect(() => {
-        if(localStorage.getItem('jwt')) {
-            //Redirect
-            history.push('/');
-        }
-    }, [])
+    // React.useEffect(() => {
+    //     if(localStorage.getItem('jwt')) {
+    //         history.push('/signin');
+    //     }
+    // }, [])
+
     return (
         <div className='register'>
             <h2 className='register__title'>Sign up</h2>
@@ -48,7 +48,7 @@ const Register = () => {
                     type='text'
                     name='email'
                     minLength={6}
-                    maxLength={100}
+                    maxLength={400}
                     required
                     value={userEmail}
                     onChange={e => setUserEmail(e.target.value)}>
