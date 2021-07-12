@@ -4,9 +4,10 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 import Login from '../Login/Login.js';
 import Register from '../Register/Register.js';
-import App from '../App/App'
+import App from '../App/App';
 
-import Header from '../Header/Header.js'
+import Header from '../Header/Header.js';
+import InfoTooltips from '../InfoTooltip/InfoTooltip';
 
 import '../../Page.css';
 import '../../index.css';
@@ -14,10 +15,22 @@ import '../../index.css';
 const Page = () => {
 
     const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+    const [isInfoToolOpen, setIsInfoToolOpen] = React.useState(false);
+
+    
 
     const handleLogin = () => {
         setIsLoggedIn(true);
     }
+
+    const handlePopup = () => {
+        setIsInfoToolOpen(true);
+    }
+
+    const closeAllPopups = () => {
+        setIsInfoToolOpen(false);
+    }
+
 
     return (
         <div className='Page'>
@@ -27,7 +40,7 @@ const Page = () => {
                 <ProtectedRoute component={App} exact path="/app" loggedIn={isLoggedIn} />
 
                 <Route path="/signup">
-                    <Register />
+                    <Register handleInfoTool={handlePopup}/>
                 </Route>
 
                 <Route path="/signin">
@@ -39,6 +52,11 @@ const Page = () => {
                 </Route>
 
             </Switch>
+
+            <InfoTooltips 
+            isOpen={isInfoToolOpen}
+            onClose={closeAllPopups}
+            />
             
         </div>
     );

@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom';
 import * as auth from '../../auth';
 
 
-const Register = () => {
+const Register = ({handleInfoTool}) => {
     const [userPassword, setUserPassword] = React.useState('');
     const [userEmail, setUserEmail] = React.useState('');
     const [message, setMessage] = React.useState('');
@@ -22,7 +22,10 @@ const Register = () => {
                 .then(res => {
                     if (!res || res.statusCode === 400) {
                         throw new Error('Error!');
-                    } return res;
+                    } if (res) {
+                        handleInfoTool();
+                        return res;
+                    } 
                 })
                 .then(resetForm())
                 .then(history.push('/signin'))
