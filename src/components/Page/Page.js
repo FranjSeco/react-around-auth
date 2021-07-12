@@ -38,8 +38,8 @@ const Page = () => {
                     {isLoggedIn ? <Redirect to="/app" /> : <Redirect to="/signin" />}
                 </Route>
 
-
             </Switch>
+            
         </div>
     );
 }

@@ -39,7 +39,7 @@ function AddPlacePopup(props) {
             <input 
             ref={placeInputRef}
             id="image-input" 
-            className="image-form__input image-form__input_name form-input" 
+            className="popup__input image-form__input_name form-input" 
             placeholder="Title" 
             type="text" 
             name="name" 
@@ -55,7 +55,7 @@ function AddPlacePopup(props) {
             <input 
             ref={urlInputRef}
             id="url-input" 
-            className="image-form__input image-form__input_about form-input" 
+            className="popup__input image-form__input_about form-input" 
             placeholder="Image URL" 
             type="url" 
             name="link" 

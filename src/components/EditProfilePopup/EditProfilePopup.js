@@ -45,7 +45,7 @@ function EditProfilePopup(props) {
             <input
                 // ref={nameInputRef}
                 id="name-input"
-                className="form-input profile-form__input profile-form__input_name"
+                className="form-input popup__input profile-form__input_name"
                 type="text"
                 name="Name"
                 placeholder='Name'
@@ -61,7 +61,7 @@ function EditProfilePopup(props) {
             <input
             // ref={aboutInputRef}
                 id="about-input"
-                className="profile-form__input profile-form__input_about form-input"
+                className="popup__input popup__input_about form-input"
                 type="text"
                 name="About"
                 placeholder='Job'

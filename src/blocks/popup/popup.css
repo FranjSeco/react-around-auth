@@ -1,10 +1,9 @@
-@import url("./__form/avatar-form__form.css");
-@import url("./__title/avatar-form__title.css");
-@import url("./__btn/avatar-form__btn.css");
-@import url("./__input/avatar-form__input.css");
+@import url("./__form/popup__form.css");
+@import url("./__title/popup__title.css");
+@import url("./__btn/popup__btn.css");
+@import url("./__input/popup__input.css");
 
-
-.avatar-form {
+.popup {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -19,16 +18,14 @@
   align-self: center;
 }
 
-
-
 @media (max-width: 530px) {
-  .avatar-form {
+  .popup {
     width: 300px;
   }
 }
 
 @media (max-width: 320px) {
-  .avatar-form {
+  .popup {
     width: 282px;
   }
 }

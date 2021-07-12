@@ -4,6 +4,7 @@
 @import url("./fonts/fonts.css");
 @import url("./Page.css");
 
+@import url("./blocks//popup/popup.css");
 
 @import url("./blocks/header/header.css");
 @import url("./blocks/login/login.css");
@@ -16,14 +17,12 @@
 @import url("./blocks/close-icon/close-icon.css");
 @import url("./blocks/overlay/overlay.css");
 
+/* @import url("./blocks/image-form/image-form.css"); */
 
+/* @import url("./blocks/profile-form/profile-form.css");
 
-@import url("./blocks/profile-form/profile-form.css");
-@import url("./blocks/image-form/image-form.css");
 @import url("./blocks/avatar-form/avatar-form.css");
-@import url("./blocks/delete-form/delete-form.css");
-
-
+@import url("./blocks/delete-form/delete-form.css"); */
 
 
 @import url("./blocks/image-popup/image-popup.css");
