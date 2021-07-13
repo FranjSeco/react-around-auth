@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom';
 import * as auth from '../../auth';
 
 
-const Register = ({handleInfoTool}) => {
+const Register = ({handleInfoTool, handleSuccess}) => {
     const [userPassword, setUserPassword] = React.useState('');
     const [userEmail, setUserEmail] = React.useState('');
     const [message, setMessage] = React.useState('');
@@ -20,16 +20,24 @@ const Register = ({handleInfoTool}) => {
         if (userEmail && userPassword) {
             auth.register(userEmail, userPassword)
                 .then(res => {
-                    if (!res || res.statusCode === 400) {
-                        throw new Error('Error!');
-                    } if (res) {
-                        handleInfoTool();
+                    if (!res || res.error === 'User with this email address already exists') {
+                        handleSuccess(false);
+                        history.push('/signup')
+                        return res;
+                        
+                    } 
+                    if (res) {
+                        handleSuccess(true);
+                        history.push('/signin')
                         return res;
                     } 
                 })
-                .then(resetForm())
-                .then(history.push('/signin'))
-                .catch(err => setMessage(err.message))
+                .then(resetForm)
+                .then(handleInfoTool)
+                .catch(err => {
+                    setMessage(err.message)
+                    console.log(message);
+                })
         } else {
             return setMessage('Something went wrong!');
         }

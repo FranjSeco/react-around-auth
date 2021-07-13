@@ -16,8 +16,7 @@ const Page = () => {
 
     const [isLoggedIn, setIsLoggedIn] = React.useState(false);
     const [isInfoToolOpen, setIsInfoToolOpen] = React.useState(false);
-
-    
+    const [success, setSuccess] = React.useState(false);
 
     const handleLogin = () => {
         setIsLoggedIn(true);
@@ -31,6 +30,9 @@ const Page = () => {
         setIsInfoToolOpen(false);
     }
 
+    const handleSuccess = (x) => {
+        setSuccess(x);
+    }
 
     return (
         <div className='Page'>
@@ -40,7 +42,7 @@ const Page = () => {
                 <ProtectedRoute component={App} exact path="/app" loggedIn={isLoggedIn} />
 
                 <Route path="/signup">
-                    <Register handleInfoTool={handlePopup}/>
+                    <Register handleInfoTool={handlePopup} handleSuccess={handleSuccess}/>
                 </Route>
 
                 <Route path="/signin">
@@ -55,7 +57,8 @@ const Page = () => {
 
             <InfoTooltips 
             isOpen={isInfoToolOpen}
-            onClose={closeAllPopups}
+            onClose={closeAllPopups}   
+            success={success}
             />
             
         </div>

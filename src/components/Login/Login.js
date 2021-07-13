@@ -25,6 +25,7 @@ const Login = ({handleLogin}) => {
         
             .then((data) => {
                 if (!data) {
+                    
                     throw new Error('Error!')
                 }
                 if (data.token) {
@@ -33,7 +34,10 @@ const Login = ({handleLogin}) => {
             })
             .then(resetForm)
             .then(() => history.push('/app'))
-            .catch(err => setMessage(err.message))
+            .catch(err => {
+                setMessage(err.message)
+                console.log(message);
+            })
     }
 
     // React.useEffect(() => {
