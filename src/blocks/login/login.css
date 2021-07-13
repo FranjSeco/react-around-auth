@@ -7,7 +7,7 @@
 
 .login {
     max-width: 358px;
-    min-height: 100vh;
+    min-height: 100%;
     margin: 20px auto 20px auto;
     background-color: black;
 }

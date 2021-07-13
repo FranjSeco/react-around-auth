@@ -1,6 +1,6 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
-import * as auth from '../../auth';
+import * as auth from '../../utils/auth';
 
 
 const Register = ({handleInfoTool, handleSuccess}) => {
@@ -26,7 +26,7 @@ const Register = ({handleInfoTool, handleSuccess}) => {
                         return res;
                         
                     } 
-                    if (res) {
+                    else if (res) {
                         handleSuccess(true);
                         history.push('/signin')
                         return res;

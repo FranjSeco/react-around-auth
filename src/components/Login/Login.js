@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import * as auth from '../../auth';
+import * as auth from '../../utils/auth';
 
 
 
@@ -28,7 +28,7 @@ const Login = ({handleLogin}) => {
                     
                     throw new Error('Error!')
                 }
-                if (data.token) {
+                else if (data.token) {
                     handleLogin();
                 }
             })

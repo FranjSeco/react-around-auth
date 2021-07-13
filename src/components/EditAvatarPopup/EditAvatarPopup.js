@@ -22,7 +22,10 @@ function EditAvatarPopup(props) {
             title={'Edit Avatar'}
             btn={'Save'}
             isOpen={props.isOpen}
-            onClose={props.onClose}>
+            onClose={props.onClose}
+            isBtn={true}
+            isTitle={true}
+            >
             <input 
             ref={avatarInputRef} 
             id="avatar-input" 
