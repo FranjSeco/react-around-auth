@@ -8,3 +8,11 @@
   margin: 32px 0 26px 0;
   color: #000000;
 }
+
+@media (max-width: 320px) {
+  .popup__text {
+    width: 244px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}

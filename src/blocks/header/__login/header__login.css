@@ -1,7 +1,15 @@
 .header__login {
-    position: absolute;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 320px) {
+  .header__login {
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+    margin-right: 34px;
+  }
 }
