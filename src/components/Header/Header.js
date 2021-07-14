@@ -22,10 +22,12 @@ function Header({ email, isLoggedIn, handleSignOut }) {
 
     console.log(getWidth)
 
-    const handleLoginButton = () => {
-        if (isLoggedIn) {
-            return <button onClick={handleSignOut} className='header__signout'>Sign Out</button>
-        } else if (!isLoggedIn && location.pathname === '/signin') {
+    const handleLoggedInButton = () => {
+        return <button onClick={handleSignOut} className='header__signout'>Sign Out</button>
+    }
+
+    const handleLoggedOutButton = () => {
+        if (location.pathname === '/signin') {
             return <a href='./signup' className='header__link'>Sign up</a>
         } else {
             return <a href='./signin' className='header__link'>Sign in</a>
@@ -42,43 +44,61 @@ function Header({ email, isLoggedIn, handleSignOut }) {
     return (
         <header className="header">
             <div className="header__logo" />
-            <div className='header__login'
-                style={
-                    isLoggedIn
-                        ?
-                        {
-                            display: `${isDisplayed}`,
-                            width: '320px',
-                            flexDirection: 'column',
-                            position: 'relative',
-                            alignContent: 'center',
-                            justifyContent: 'center',
-                            textAlign: 'center',
-                            top: '0',
-                            right: '0',
-                            borderBottom: '1px solid rgba(84, 84, 84, 0.7)'
-                        }
-                        :
-                        {}}
-            >
+            {isLoggedIn && getWidth > 651 ?
+                <>
+                    <div className='header__loggedin'>
+                        <p className='header__email' >
+                            {email}
+                        </p>
+                        {handleLoggedInButton()}
+                    </div>
+                </>
+                :
+                <>
+                </>
+            }
 
-                {isLoggedIn ? <p className='header__email' >
-                    {email}
-                </p> : ''}
-                {handleLoginButton()}
-            </div>
+            {isLoggedIn && getWidth < 652 ?
+                <>
+                    <button className='header__burger' onClick={handleBurger}>
+                        <span className={`header__burger_${open}`}></span>
+                        <span className={`header__burger_${open}`}></span>
+                        <span className={`header__burger_${open}`}></span>
+                    </button>
+                    <div className='header__loggedin' style={{
+                        display: `${isDisplayed}`,
+                        width: '100%',
+                        flexDirection: ' column',
+                        position: 'relative',
+                        alignContent: 'center',
+                        justifyContent: 'center',
+                        margin: '0',
+                        textAlign: 'center',
+                        top: '0',
+                        left: '0',
+                        borderBottom: '1px solid rgba(84, 84, 84, 0.7)'
+                    }}>
+                        <p className='header__email' >
+                            {email}
+                        </p>
+                        {handleLoggedInButton()}
+                    </div>
+                </>
+                :
+                <>
+                </>
+            }
+
+            {!isLoggedIn
+                &&
+                <div className='header__loggedout'>
+                    {handleLoggedOutButton()}
+                </div>}
+
 
             {/* <button className='header__burger' style={{backgroundImage: `${bg}`}}  onClick={handleBurger}>
             </button> */}
 
-            {isLoggedIn
-                &&
-                <button className='header__burger' onClick={handleBurger}>
-                    <span className={`header__burger_${open}`}></span>
-                    <span className={`header__burger_${open}`}></span>
-                    <span className={`header__burger_${open}`}></span>
-                </button>
-            }
         </header>
 
     )

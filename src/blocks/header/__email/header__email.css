@@ -10,7 +10,7 @@
   margin-right: 24px;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 650px) {
   .header__email {
     margin: 40px auto 0 auto;
   }

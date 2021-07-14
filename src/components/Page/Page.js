@@ -16,7 +16,7 @@ import * as auth from '../../utils/auth';
 
 const Page = () => {
 
-    const [isLoggedIn, setIsLoggedIn] = React.useState(true);
+    const [isLoggedIn, setIsLoggedIn] = React.useState(false);
     const [isInfoToolOpen, setIsInfoToolOpen] = React.useState(false);
     const [success, setSuccess] = React.useState(false);
 

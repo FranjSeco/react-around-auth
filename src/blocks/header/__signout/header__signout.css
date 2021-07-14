@@ -11,7 +11,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 650px) {
   .header__signout {
     margin: 18px auto 40px auto;
   }
