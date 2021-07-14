@@ -29,6 +29,6 @@
   .profile {
     box-sizing: border-box;
     width: 282px;
-    margin: 42px auto 36px auto;
+    margin: 0 auto 36px auto;
   }
 }

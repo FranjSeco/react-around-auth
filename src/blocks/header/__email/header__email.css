@@ -9,3 +9,9 @@
   color: #ffffff;
   margin-right: 24px;
 }
+
+@media (max-width: 320px) {
+  .header__email {
+    margin: 40px auto 0 auto;
+  }
+}

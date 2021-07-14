@@ -25,9 +25,7 @@
 
 @media (max-width: 410px) {
   .close-icon {
-    width: 33.15px;
-    height: 33.15px;
-    right: -10px;
-    top: -30px;
+    right: -11px;
+    top: -60px;
   }
 }

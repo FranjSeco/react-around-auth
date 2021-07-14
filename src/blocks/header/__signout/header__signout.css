@@ -10,3 +10,9 @@
   border: none;
   cursor: pointer;
 }
+
+@media (max-width: 320px) {
+  .header__signout {
+    margin: 18px auto 40px auto;
+  }
+}

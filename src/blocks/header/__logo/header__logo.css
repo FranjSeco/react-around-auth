@@ -15,6 +15,7 @@
 @media (max-width: 320px) {
   .header__logo {
     width: 126px;
-    height: 24px;
+    height: 83px;
+    background-position: center;
   }
 }

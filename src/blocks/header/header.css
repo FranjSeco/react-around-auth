@@ -3,6 +3,7 @@
 @import url("./__email/header__email.css");
 @import url('./__link/header__link.css');
 @import url('./__signout/header__signout.css');
+@import url('./__burger/header__burger.css');
 
 .header {
   max-width: 880px;
@@ -20,5 +21,7 @@
   .header {
     min-height: 56px;
     margin-bottom: 0;
+    flex-direction: column-reverse;
+    margin: 0 auto 40px auto;
   }
 }

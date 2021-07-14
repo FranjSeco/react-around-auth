@@ -12,8 +12,9 @@
     background-color: black;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 400px) {
     .login {
         max-width: 260px;
+        margin-top: 0;
     }
 }
