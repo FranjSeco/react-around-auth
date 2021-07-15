@@ -6,7 +6,7 @@ function EditProfilePopup(props) {
     const [name, setName] = React.useState('');
     const [description, setDescription] = React.useState('');
     const currentUser = React.useContext(CurrentUserContext);
-
+    console.log(props)
     // const nameInputRef = React.useRef('');
     // const aboutInputRef = React.useRef('');
 
@@ -26,7 +26,7 @@ function EditProfilePopup(props) {
     React.useEffect(() => {
         setName(currentUser.name);
         setDescription(currentUser.about);
-    }, [currentUser, props.isOpen]);
+    }, [currentUser]);
 
     return (
         <PopupWithForm
@@ -43,7 +43,7 @@ function EditProfilePopup(props) {
                 className="form-input popup__input profile-form__input_name"
                 type="text"
                 name="Name"
-                placeholder='Name'
+                placeholder={props.user.name || ''}
                 minLength={2}
                 maxLength={40}
                 required
@@ -60,7 +60,7 @@ function EditProfilePopup(props) {
                 className="popup__input popup__input_about form-input"
                 type="text"
                 name="About"
-                placeholder='Job'
+                placeholder={props.user.about || ''}
                 minLength={2}
                 maxLength={200}
                 required
