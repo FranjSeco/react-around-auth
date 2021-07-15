@@ -20,7 +20,6 @@ function Header({ email, isLoggedIn, handleSignOut }) {
         return () => window.removeEventListener("resize", updateDimensions);
     }, [getWidth])
 
-    console.log(getWidth)
 
     const handleLoggedInButton = () => {
         return <button onClick={handleSignOut} className='header__signout'>Sign Out</button>

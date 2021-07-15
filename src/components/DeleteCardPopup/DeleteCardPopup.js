@@ -14,9 +14,7 @@ function DeleteCardPopup(props) {
             title={'Are you sure?'}
             btn={'Yes'}
             isOpen={props.isOpen}
-            onClose={props.onClose}
-            isBtn={true}
-            isTitle={true}>
+            onClose={props.onClose}>
         </PopupWithForm>
     )
 }

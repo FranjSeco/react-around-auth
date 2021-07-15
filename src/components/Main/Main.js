@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card.js'
+import Footer from '../Footer/Footer.js'
 import { CurrentUserContext } from '../../contexts/CurrentUserContext.js'
 
 
@@ -37,7 +38,9 @@ function Main(props) {
                         />))
                 }
             </div>
+            <Footer />
         </main >
+
     )
 }
 

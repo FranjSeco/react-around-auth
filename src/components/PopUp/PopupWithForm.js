@@ -5,16 +5,16 @@ function PopupWithForm(props) {
         <div className={`overlay ${(props.isOpen) && 'overlay_popup'}`} >
             <div className={`popup`}>
                 <button className="close-icon" onClick={props.onClose} type="button"> </button>
-                <form className={`popup__form form`} onSubmit={props.onSubmit} name="Form" noValidate>
-                    {props.isTitle && <h2 className={`popup__title`}>
+                <form className={`popup__form form`} onSubmit={props.onSubmit} name={props.title}>
+                    <h2 className={`popup__title`}>
                         {props.title}
-                    </h2>}
+                    </h2>
                     {
                         props.children
                     }
-                    {props.isBtn && <button className={`popup__btn form-submit`} onClick={props.onClose} type="submit">
+                    <button className={`popup__btn form-submit`} onClick={props.onClose} type="submit">
                         {props.btn}
-                    </button>}
+                    </button>
                 </form>
             </div>
         </div>

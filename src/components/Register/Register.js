@@ -20,13 +20,13 @@ const Register = ({handleInfoTool, handleSuccess}) => {
         if (userEmail && userPassword) {
             auth.register(userEmail, userPassword)
                 .then(res => {
-                    if (!res || res.error === 'User with this email address already exists') {
+                    if (!res) {
                         handleSuccess(false);
                         history.push('/signup')
                         return res;
                         
                     } 
-                    else if (res) {
+                    else {
                         handleSuccess(true);
                         history.push('/signin')
                         return res;
@@ -35,7 +35,9 @@ const Register = ({handleInfoTool, handleSuccess}) => {
                 .then(resetForm)
                 .then(handleInfoTool)
                 .catch(err => {
-                    setMessage(err.message)
+                    handleSuccess(false);
+                    handleInfoTool();
+                    setMessage(err)
                     console.log(message);
                 })
         } else {

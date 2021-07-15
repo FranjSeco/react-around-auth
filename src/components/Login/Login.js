@@ -4,7 +4,7 @@ import * as auth from '../../utils/auth';
 
 
 
-const Login = ({handleLogin}) => {
+const Login = ({handleLogin, handleEmail}) => {
     const [userPassword, setUserPassword] = React.useState('');
     const [userEmail, setUserEmail] = React.useState('');
     const [message, setMessage] = React.useState('');
@@ -21,8 +21,9 @@ const Login = ({handleLogin}) => {
         if (!userEmail || !userPassword) {
             return;
         }
+        console.log(userEmail)
         auth.authorize(userEmail, userPassword)
-        
+
             .then((data) => {
                 if (!data) {
                     
@@ -33,7 +34,10 @@ const Login = ({handleLogin}) => {
                 }
             })
             .then(resetForm)
-            .then(() => history.push('/app'))
+            .then(() => {
+                handleEmail(userEmail);
+                history.push('/app')
+            })
             .catch(err => {
                 setMessage(err.message)
                 console.log(message);

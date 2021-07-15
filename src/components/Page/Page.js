@@ -18,7 +18,7 @@ const Page = () => {
 
     const [isLoggedIn, setIsLoggedIn] = React.useState(false);
     const [isInfoToolOpen, setIsInfoToolOpen] = React.useState(false);
-    const [success, setSuccess] = React.useState(false);
+    const [success, setSuccess] = React.useState();
 
     const [email, setEmail] = React.useState('');
     const history = useHistory();
@@ -31,6 +31,7 @@ const Page = () => {
         localStorage.removeItem('jwt');
         setIsLoggedIn(false);
         history.push('./signin');
+        setEmail('');
     }
 
     const handlePopup = () => {
@@ -45,19 +46,27 @@ const Page = () => {
         setSuccess(x);
     }
 
+    const handleEmail = (x) => {
+        setEmail(x);
+    }
+
+
     React.useEffect(() => {
         const jwt = localStorage.getItem('jwt');
         if (jwt) {
             auth.getContent(jwt)
                 .then(res => {
                     if (res) {
-                        setEmail(res.data.email);
+                        const currentEmail = res.data.email;
+                        setEmail(currentEmail);
+                        setIsLoggedIn(true);
+                        history.push('./app');
                     }
                     
                 })
                 .catch(err => console.log(err))
         }
-    }, [history])
+    }, [])
 
     return (
         <div className='Page'>
@@ -71,11 +80,11 @@ const Page = () => {
                 </Route>
 
                 <Route path="/signin">
-                    <Login handleLogin={handleLogin} />
+                    <Login handleLogin={handleLogin} handleEmail={handleEmail}/>
                 </Route>
 
                 <Route>
-                    {isLoggedIn ? <Redirect to="/app" /> : <Redirect to="/signin" />}
+                    {isLoggedIn ? <Redirect to="/app" /> : <Redirect to="/signup" />}
                 </Route>
 
             </Switch>
