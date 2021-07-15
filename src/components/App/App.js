@@ -244,6 +244,7 @@ function App() {
           isOpen={isEditProfilePopupOpen}
           onClose={closeAllPopups}
           onUpdateUser={handleUpdateUser}
+          user={currentUser}
         />
 
         <EditAvatarPopup

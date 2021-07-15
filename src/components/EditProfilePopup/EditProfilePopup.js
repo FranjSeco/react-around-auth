@@ -10,13 +10,7 @@ function EditProfilePopup(props) {
     // const nameInputRef = React.useRef('');
     // const aboutInputRef = React.useRef('');
 
-    function handleNameChange(e) {
-        setName(e.target.value);
-    }
-
-    function handleJobChange(e) {
-        setDescription(e.target.value);
-    }
+    
 
     function handleSubmit(e) {
         // Prevent the browser from navigating to the form address
@@ -53,7 +47,7 @@ function EditProfilePopup(props) {
                 minLength={2}
                 maxLength={40}
                 required
-                onChange={handleNameChange}
+                onChange={(e) => setName(e.target.value)}
                 value={name || ''}
             />
 
@@ -70,7 +64,7 @@ function EditProfilePopup(props) {
                 minLength={2}
                 maxLength={200}
                 required
-                onChange={handleJobChange}
+                onChange={(e) => setDescription(e.target.value)}
                 value={description || ''}
             />
 
